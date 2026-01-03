@@ -6,10 +6,10 @@
 .import/
 export.cfg
 export_credentials.cfg
-docs/
+/docs/
 
 # Planning / local-only notes
-Notes/
+/Notes/
 
 
 # Imported translations (automatically generated from CSV files)
