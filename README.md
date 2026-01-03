@@ -1,0 +1,2 @@
+# Ondu_Mutthina_kathe_Gamedev
+Tribute to Shankar Nag Sir's Ondu Mutthina Kathe - A short, narrative-driven single-player game following Aithu, a fisherman who discovers a single, perfect pearl while out at sea. The pearl acts as a catalyst for a dark moral tale: it awakens hopes and desperate plans in the village, causes friction between friends and neighbors, and culminates in a chilling betrayal and violent ambush. The game emphasizes atmosphere, personal stakes, and a tight vertical slice that explores ownership, duty, and the human cost of greed.
