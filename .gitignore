@@ -7,19 +7,53 @@
 export.cfg
 export_credentials.cfg
 
+# Exports & builds
+/export/
+build/
+*.pck
+*.zip
+*.apk
+*.aab
+*.exe
+*.app
+
+# C# / Mono
+.mono/
+data_*/
+mono_crash.*.json
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.mdb
+*.pdb
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
 
 # Planning / local-only notes
 /Notes/
 
-
 # Imported translations (automatically generated from CSV files)
 *.translation
 
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# Temp / backups / logs
+*_backup.*
+*.tmp
+*.log
+*.swp
+*.swo
 
 # Git-specific ignores
 .gitignore
 .gitattributes
+
+# Optional: ignore export_presets if you don't want to commit export profiles
+# export_presets.cfg
