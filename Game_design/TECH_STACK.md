@@ -31,9 +31,7 @@
   - docs/
 
 ## Backups & Versioning
-- Keep a backups folder outside the project.
-- Zip the whole project folder after each milestone.
-- Naming suggestion: PearlGame_YYYY-MM-DD_001.zip
+- **Version control:** Git + GitHub
 
 ## Build / CI (Optional)
 - Automated export using Godot CLI / headless export templates for Windows builds.

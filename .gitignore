@@ -6,9 +6,10 @@
 .import/
 export.cfg
 export_credentials.cfg
-/docs/
+
 
 # Planning / local-only notes
+/docs/
 /Notes/
 
 
@@ -19,3 +20,7 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Git-specific ignores
+.gitignore
+.gitattributes
