@@ -1,0 +1,30 @@
+Sprint,TaskID,Title,Description,EstimateHours,Priority,AcceptanceCriteria
+Sprint0,0.1,Create backups (no Git),Create a backups folder and make a first zip snapshot of the project folder,3,High,Backup zip created and can be restored
+Sprint0,0.2,Create Godot project,Create new Godot project with basic settings and empty level,2,High,New Godot project loads in editor
+Sprint0,0.3,Placeholder level & terrain,Create player-start beach & simple dock layout,8,High,Placeholder beach level loads & camera playable
+Sprint0,0.4,Editor performance config,Tweak project settings (render/quality/export) & document recommended editor settings,2,Medium,Settings documented in docs/TECH_SETUP.md
+Sprint1,1.1,Player controller,Implement movement & core input,8,High,Player movement tested and responsive
+Sprint1,1.2,Pearl pickup & inventory,Create item, pickup logic, & HUD indicator,12,High,Pickup triggers UI update with pearl count
+Sprint1,1.3,Item base class,Generic Item class for additional pickups,6,Medium,Item class usable for multiple pickups
+Sprint1,1.4,Pearl VFX & SFX,Create minimal prefab VFX + SFX for pickup,6,Medium,VFX visible, SFX plays
+Sprint2,2.1,Merchant NPC & triggers,Merchant scene, dialog trigger & navigation points,8,High,Merchant triggers with 'interact' action
+Sprint2,2.2,Dialogue JSON system,Create simple dialogue JSON schema and parser,12,High,Dialog choices map to flags
+Sprint2,2.3,Trade logic,Offer/decline & inventory transaction for the pearl,10,High,Merchant can buy pearl; flags set
+Sprint2,2.4,Merchant dialogue content,Write initial suspicious conversation lines,6,Medium,Merchant shows suspicious lines when reading
+Sprint3,3.1,Underwater cavern assets,Decorate cavern and set lighting,18,High,Player can enter and traverse cavern
+Sprint3,3.2,Oxygen mechanic & HUD,Oxygen timer when submerged with warnings & damage,10,High,Oxygen drains & low/zero triggers a danger state
+Sprint3,3.3,Pearl discovery,Place the pearl in cave & pick-up event,8,High,Pearl can be found underwater and picked up
+Sprint3,3.4,Underwater interactivity,Swim behavior or short swim input set,8,Medium,Player can swim and move in a water volume
+Sprint4,4.1,Friend NPC & plan,Friend scene & basic social behaviour,10,High,Friend can interact with player & attempt to steal
+Sprint4,4.2,Theft logic & cutscene,Theft attempt sequence & choice response,12,High,Theft attempt triggers and results in flags across choices
+Sprint4,4.3,Consequences & flags,Set flag influences for merchant & story outcomes,6,Medium,Merchant suspicion increases if pearls stolen or flagged
+Sprint4,4.4,Steal cutscene polish,Animation & sound cues for theft attempt,8,Medium,Steal scene is coherent and readably presented
+Sprint5,5.1,Merchant ambush logic,Merchant sets ambush trigger, spawns men, and syncs to player events,12,High,Ambush spawn events happen after merchant triggers
+Sprint5,5.2,Ambush goons AI,Goons pathfinding and basic attack states,16,High,Goons attack NPC & player and follow simple states
+Sprint5,5.3,Ambush location prep,Design & layout the dock alley ambush map for drama,10,High,Ambush area is built; chokepoints exist for tension
+Sprint5,5.4,Merchant secondary dialogue,Merchant final manipulative line and return for ambush,6,Medium,Merchant displays final manipulative lines before leaving and returning
+Sprint6,6.1,Ambush cinematic & timing,AnimationPlayer timeline between camera angles; sync events & enemy behaviors,12,High,Ambush cinematic triggers and camera cuts
+Sprint6,6.2,Ambush VFX and SFX,Blood/impact SFX and dynamic audio mixing,10,High,VFX & SFX correctly play and match cinematic events
+Sprint6,6.3,End state & save,Save game or end-state for demo; show final ending screen,6,High,Save/Load or end-state implemented & tested
+Sprint6,6.4,QA & polish,Playtest the slice & fix issues across sprints,16,High,No game-breaking bugs, demo passes minimal QA
+Sprint6,6.5,Demo package & playtest form,Package build and distribute with instructions,6,Medium,Package created & playtest feedback collection ready
