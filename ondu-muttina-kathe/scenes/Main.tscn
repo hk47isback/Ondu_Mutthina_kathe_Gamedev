@@ -1,0 +1,183 @@
+[gd_scene load_steps=21 format=3 uid="uid://bgprrwvyohqxw"]
+
+[ext_resource type="PackedScene" uid="uid://5qtuexouu77e" path="res://scenes/Player.tscn" id="1_player"]
+
+[sub_resource type="Sky" id="Sky_qnwvq"]
+
+[sub_resource type="Environment" id="Environment_elqb8"]
+background_mode = 2
+background_energy_multiplier = 0.2
+sky = SubResource("Sky_qnwvq")
+ssao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="Material_ground"]
+albedo_color = Color(0.4, 0.55, 0.3, 1)
+roughness = 0.9
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rvslj"]
+size = Vector2(60, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bbpv"]
+size = Vector3(60, 0.5, 60)
+
+[sub_resource type="StandardMaterial3D" id="Material_hill"]
+albedo_color = Color(0.5, 0.4, 0.25, 1)
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_hill1"]
+size = Vector3(8, 3, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hill1"]
+size = Vector3(8, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hill2"]
+size = Vector3(12, 5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hill2"]
+size = Vector3(12, 5, 10)
+
+[sub_resource type="StandardMaterial3D" id="Material_rock"]
+albedo_color = Color(0.45, 0.45, 0.5, 1)
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_ramp1"]
+size = Vector3(6, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ramp1"]
+size = Vector3(6, 0.5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_platform"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_platform"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hill3"]
+size = Vector3(6, 2, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hill3"]
+size = Vector3(6, 2, 6)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rock"]
+top_radius = 1.5
+bottom_radius = 2.0
+height = 2.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rock"]
+height = 2.5
+radius = 2.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 5.3049693, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_elqb8")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+material_override = SubResource("Material_ground")
+mesh = SubResource("PlaneMesh_rvslj")
+
+[node name="GroundCollision" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_0bbpv")
+
+[node name="Hill1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.5, -8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Hill1"]
+material_override = SubResource("Material_hill")
+mesh = SubResource("BoxMesh_hill1")
+
+[node name="Collision" type="CollisionShape3D" parent="Hill1"]
+shape = SubResource("BoxShape3D_hill1")
+
+[node name="Hill2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2.5, -15)
+
+[node name="Mesh" type="MeshInstance3D" parent="Hill2"]
+material_override = SubResource("Material_hill")
+mesh = SubResource("BoxMesh_hill2")
+
+[node name="Collision" type="CollisionShape3D" parent="Hill2"]
+shape = SubResource("BoxShape3D_hill2")
+
+[node name="Ramp1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659, -0.2588, 0, 0.2588, 0.9659, -12, 0.75, -2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ramp1"]
+material_override = SubResource("Material_rock")
+mesh = SubResource("BoxMesh_ramp1")
+
+[node name="Collision" type="CollisionShape3D" parent="Ramp1"]
+shape = SubResource("BoxShape3D_ramp1")
+
+[node name="Ramp2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659, -0.2588, 0, 0.2588, 0.9659, 9, 1.25, -9)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ramp2"]
+material_override = SubResource("Material_rock")
+mesh = SubResource("BoxMesh_ramp1")
+
+[node name="Collision" type="CollisionShape3D" parent="Ramp2"]
+shape = SubResource("BoxShape3D_ramp1")
+
+[node name="Platform1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Platform1"]
+material_override = SubResource("Material_hill")
+mesh = SubResource("BoxMesh_platform")
+
+[node name="Collision" type="CollisionShape3D" parent="Platform1"]
+shape = SubResource("BoxShape3D_platform")
+
+[node name="Platform2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 12)
+
+[node name="Mesh" type="MeshInstance3D" parent="Platform2"]
+material_override = SubResource("Material_hill")
+mesh = SubResource("BoxMesh_platform")
+
+[node name="Collision" type="CollisionShape3D" parent="Platform2"]
+shape = SubResource("BoxShape3D_platform")
+
+[node name="Hill3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, 10)
+
+[node name="Mesh" type="MeshInstance3D" parent="Hill3"]
+material_override = SubResource("Material_hill")
+mesh = SubResource("BoxMesh_hill3")
+
+[node name="Collision" type="CollisionShape3D" parent="Hill3"]
+shape = SubResource("BoxShape3D_hill3")
+
+[node name="Rock1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.25, -5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Rock1"]
+material_override = SubResource("Material_rock")
+mesh = SubResource("CylinderMesh_rock")
+
+[node name="Collision" type="CollisionShape3D" parent="Rock1"]
+shape = SubResource("CylinderShape3D_rock")
+
+[node name="Rock2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -8, 1, 18)
+
+[node name="Mesh" type="MeshInstance3D" parent="Rock2"]
+material_override = SubResource("Material_rock")
+mesh = SubResource("CylinderMesh_rock")
+
+[node name="Collision" type="CollisionShape3D" parent="Rock2"]
+shape = SubResource("CylinderShape3D_rock")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866, 0.5, 0, -0.5, 0.866, 0, 15, 20)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009423256, 1.0148869, 0.00198555)

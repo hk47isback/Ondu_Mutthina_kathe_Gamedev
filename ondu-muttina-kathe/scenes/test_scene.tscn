@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnlr36t1nhe85"]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_floor"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="StandardMaterial3D" id="Material_cube"]
+albedo_color = Color(0.8, 0.2, 0.2, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_cube"]
+
+[node name="TestScene" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = SubResource("PlaneMesh_floor")
+
+[node name="FloorCollision" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="FloorCollisionShape" type="CollisionShape3D" parent="FloorCollision"]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="Player" parent="."]
+instance = ExtResource(1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.7071, -0.7071, 0, 0.7071, 0.7071, 0, 0, 0, 1, 0, 4, 0)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(-0.99927026, 0, -0.038196005, 0, 1, 0, 0.038196005, 0, -0.99927026, 0, 4, -10)
+current = false

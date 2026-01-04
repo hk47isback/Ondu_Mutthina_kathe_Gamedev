@@ -12,3 +12,23 @@ Please read these docs first to keep story, scope, and tooling consistent:
 - Technical setup details: [docs/TECH_SETUP.md](docs/TECH_SETUP.md)
 
 If you propose changes that affect story beats or the tech stack, update the relevant markdown file(s) in the same PR.
+
+## Folder structure
+
+Repo root (docs + notes):
+
+- `docs/` — planning, setup, roadmap
+- `Story/` — story notes (core + level flow)
+- `Game_design/` — design notes (tech stack, etc.)
+
+Game project root (Godot): `ondu-muttina-kathe/`
+
+- `ondu-muttina-kathe/project.godot` — Godot project file
+- `ondu-muttina-kathe/scenes/` — `.tscn` scenes (Main, Player, NPCs, items)
+- `ondu-muttina-kathe/scripts/` — GDScript (and optional C#) code
+- `ondu-muttina-kathe/assets/3d/` — `.glb` models and 3D assets
+- `ondu-muttina-kathe/assets/2d/` — UI textures, icons, sprites
+- `ondu-muttina-kathe/audio/` — music, SFX, ambience
+- `ondu-muttina-kathe/materials/` — Godot materials and shaders
+- `ondu-muttina-kathe/fx/` — particles, VFX scenes/resources
+- `ondu-muttina-kathe/build/` — exported builds (kept out of Git by `.gitignore`)
