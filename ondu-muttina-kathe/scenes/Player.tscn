@@ -23,5 +23,5 @@ material_override = SubResource("Material_body")
 mesh = SubResource("BoxMesh_body")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.99640024, 0, -0.08477339, 0, 1, 0, 0.08477339, 0, -0.99640024, 0, 2, -4)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.730206, 0.77502525, -2.0860097)
 current = true
