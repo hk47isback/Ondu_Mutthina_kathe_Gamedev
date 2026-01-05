@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv5a0iorwy6sr"]
+
+[sub_resource type="Environment" id="Environment_xav4b"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_qux8b"]
+
+[sub_resource type="Compositor" id="Compositor_5f7sk"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="Level_Shore_01" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level_Shore_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4041859, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level_Shore_01/DirectionalLight3D"]
+environment = SubResource("Environment_xav4b")
+camera_attributes = SubResource("CameraAttributesPractical_qux8b")
+compositor = SubResource("Compositor_5f7sk")
